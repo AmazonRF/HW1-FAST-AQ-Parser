@@ -14,6 +14,8 @@ def transcribe(seq: str, reverse: bool = False) -> str:
     rna_seq = ""    #here store the result
     for nucleotide in seq:
         rna_seq += TRANSCRIPTION_MAPPING.get(nucleotide, "")
+
+    if reverse: rna_seq =  rna_seq[::-1]
     return rna_seq
 
 def reverse_transcribe(seq: str) -> str:
